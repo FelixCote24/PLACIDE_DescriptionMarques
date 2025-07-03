@@ -2,8 +2,8 @@ using System.Text;
 using Newtonsoft.Json;
 
 class GestionRequete{
-    string apiKey = "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"; // Replace with your actual OpenAI API key
-    string apiKeyGemini = "AIzaSyD_oS6Gu6NgkH0YWrRmNEZLeRwSVHfhLwc";
+    string apiKey = ""; // Replace with your actual OpenAI API key
+    string apiKeyGemini = "";
     string apiUrlGemini = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyD_oS6Gu6NgkH0YWrRmNEZLeRwSVHfhLwc";
     string apiUrl = "https://api.openai.com/v1/chat/completions";
 
