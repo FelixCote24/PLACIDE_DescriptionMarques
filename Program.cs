@@ -12,7 +12,7 @@ internal class Program
     private static GestionCsv gestionCSV;
     private static AjoutMarqueSimple ajoutMarqueSimple;
 
-    private static bool ANGLAIS = true;
+    private static bool ANGLAIS = false;
     private async static Task Main(string[] args)
     {
         Generated = new List<int>();
