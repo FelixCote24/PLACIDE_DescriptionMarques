@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using CategorieProject;
+using System.Xml.Serialization;
 
 internal class Program
 {
@@ -9,6 +10,7 @@ internal class Program
     private static GestionRequete gestionRequete;
     private static GestionLog gestionLog;
     private static GestionCsv gestionCSV;
+    private static AjoutMarqueSimple ajoutMarqueSimple;
 
     private static bool ANGLAIS = true;
     private async static Task Main(string[] args)
@@ -22,14 +24,18 @@ internal class Program
         gestionRequete = new GestionRequete();
         gestionLog = new GestionLog();
         gestionCSV = new GestionCsv();
-        // gestionExcel.setupFile(ANGLAIS);
-        // marques = gestionExcel.RemplirListeMarques();
-        // for(int i = 0; i < marques.Count; i++){
-        //      await GenDescription(i);
-        // }
-        // gestionLog.CreateLog(Generated);
-        // gestionCSV.CreateLog(Generated, ANGLAIS);
-        gestionCSV.AddMetaTitles();
+        ajoutMarqueSimple = new AjoutMarqueSimple();
+        marques = new List<Marque>();
+        //gestionExcel.setupFile(ANGLAIS);
+        //marques = gestionExcel.RemplirListeMarques();
+        marques.Add(ajoutMarqueSimple.AjouterMarqueSimple(ANGLAIS));
+        for (int i = 0; i < marques.Count; i++)
+        {
+            await GenDescription(i);
+        }
+        //gestionLog.CreateLog(Generated);
+        gestionCSV.CreateLog(Generated, ANGLAIS);
+        gestionCSV.AddMetaTitles(ANGLAIS);
         
     }
 

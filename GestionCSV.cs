@@ -50,9 +50,9 @@ class GestionCsv
         return input;
     }
 
-    public void AddMetaTitles()
+    public void AddMetaTitles(bool ANGLAIS)
     {
-        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "csv", "MarqueCsvComplet.csv");
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "csv", "descriptionEN.csv");
         string outputPath = Path.Combine(Directory.GetCurrentDirectory(), "csv", "MarqueCsvComplet_with_meta.csv");
 
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)

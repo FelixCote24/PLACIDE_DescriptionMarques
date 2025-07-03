@@ -5,7 +5,7 @@ class GestionLog{
     string filePath = Path.Combine(Directory.GetCurrentDirectory(), "logs", "logs.xlsx");
     public void CreateLog(List<int> generatedIndexList){
         List<Marque> list = Program.marques;
-
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         FileInfo file = new FileInfo(filePath);
         ExcelPackage package = new ExcelPackage(file);
 
